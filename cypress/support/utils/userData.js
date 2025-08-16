@@ -9,7 +9,8 @@ export const generateUserData= () => {
   const randomEmail = faker.internet.email();
   const confirmationEmail = randomEmail;
   const randomPassword = faker.internet.password();
-  const loginEmail = "leenodeh287@gmail.com"; 
+  const loginEmail = "leenodeh7333@gmail.com"; 
+  const loinPass="Leenodeh123"
   const birthDay = faker.helpers.rangeToNumber({ min: 1, max: 30 });
   const birthMonth = faker.date.month();
   const birthYear = "2001";
@@ -52,5 +53,6 @@ export const generateUserData= () => {
     randomZipCode,
     randomPhoneNumber,
     invalidEmail,
+    loinPass
   };
 };

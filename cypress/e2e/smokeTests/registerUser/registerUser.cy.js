@@ -51,9 +51,7 @@ Then("I click the 'Continue' button", (ele, text) => {
 });
 
 Then("I should be logged in as the new user", (tag, message) => {
-  assertion.showMessage("a", "Logout")
-  assertion.showMessage("a", "Delete Account")
-  assertion.showMessage("a", "Logged in as")
+assertionShared.verifyLogoutAndDeleteAccount();
 });
 
 // Scenario 2: Register with an existing email
