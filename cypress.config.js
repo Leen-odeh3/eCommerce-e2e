@@ -1,18 +1,15 @@
-const { defineConfig } = require("cypress");
-const {downloadFile} = require('cypress-downloadfile/lib/addPlugin')
-const { verifyDownloadTasks } = require('cy-verify-downloads');
-
+const { defineConfig } = require('cypress');
+const cucumber = require('cypress-cucumber-preprocessor').default;
 
 module.exports = defineConfig({
-  defaultCommandTimeout: 15000,
-  pageLoadTimeout: 25000,
-  requestTimeout: 15000,
-  video: false,
-  projectId: "votm1q",
   e2e: {
+    // specPattern: '**/*.{feature,cy.js}',
+    specPattern: '**/*.feature',
+    chromeWebSecurity: false,
     setupNodeEvents(on, config) {
-      on('task', {downloadFile})
-      on('task', verifyDownloadTasks);
+      on('file:preprocessor', cucumber());
     },
+    baseUrl: 'https://www.automationexercise.com/',
   },
+  screenshotsFolder: 'MyScreens',
 });
