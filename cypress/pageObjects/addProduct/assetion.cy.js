@@ -7,6 +7,7 @@ class addProductAssertions{
 
     check(){
         cy.contains("a","Long Maxi Tulle Fancy Dress Up Outfits -Pink").should("be.visible")
+        cy.get(".cart_quantity .disabled").should('have.length.greaterThan',0)
     }
 }
 

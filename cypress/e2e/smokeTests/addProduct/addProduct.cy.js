@@ -11,9 +11,10 @@ Given('Navigate to website', () => {
   cy.visit('/');
 });
 
-When('I select a product to add and click add to cart', () => {
-action.clickAddToCart()
+When('I add {int} products to the cart', (qty) => {
+  action.clickAddToCart(qty);
 });
+
 
 Then('I should see the product added confirmation', () => {
  assert.showConfirmAdded()
