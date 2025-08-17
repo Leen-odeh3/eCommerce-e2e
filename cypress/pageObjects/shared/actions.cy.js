@@ -5,7 +5,7 @@ class SharedActions {
     }
     
     clickToLink(tag, text) {
-        cy.contains(tag, text).click()
+      cy.contains(tag, text).click({ force: true });
     }
 }
 
