@@ -17,7 +17,14 @@ class productsPageActions {
     clickViewProduct(){
   cy.get(".product-image-wrapper").first().contains("View Product").click();
     }
+  
+    typeInSearch(name){
+        cy.get("#search_product").type(name);
+    }
 
+    clickSearchIcon(){
+        cy.get("#submit_search").click();
+    }
 
 }
 
