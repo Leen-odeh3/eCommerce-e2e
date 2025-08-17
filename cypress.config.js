@@ -9,7 +9,7 @@ module.exports = defineConfig({
     setupNodeEvents(on, config) {
       on('file:preprocessor', cucumber());
     },
-    baseUrl: 'https://www.automationexercise.com/',
+    baseUrl: 'https://www.automationexercise.com',
   },
   screenshotsFolder: 'MyScreens',
 });

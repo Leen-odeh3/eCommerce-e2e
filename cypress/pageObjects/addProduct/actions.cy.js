@@ -6,9 +6,5 @@ class addProductActions{
       cy.wait(1000);
     }
   }
-
-    GoToCartPage(){
-        cy.visit("/view_cart")
-    }
 }
 export default addProductActions

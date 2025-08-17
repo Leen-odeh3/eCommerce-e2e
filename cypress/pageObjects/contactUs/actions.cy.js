@@ -27,10 +27,6 @@ class ContactUsActions {
   submitForm() {
     cy.getByDataQa('submit-button').click();
   }
-
-  clickHome() {
-    cy.contains("a","Home").click();
-  }
 }
 
 export default ContactUsActions;

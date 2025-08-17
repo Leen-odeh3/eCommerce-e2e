@@ -3,13 +3,15 @@ import { Given, When, Then, Before } from 'cypress-cucumber-preprocessor/steps';
 import productsPageActions from '../../../pageObjects/productsPage/actions.cy';
 import productsPageAssertions from '../../../pageObjects/productsPage/assertions.cy';
 import Shared from '../../../pageObjects/shared/assertions.cy'
+import SharedActions from '../../../pageObjects/shared/actions.cy';
 
 const action = new productsPageActions()
 const assertion = new productsPageAssertions()
 var sharedAction = new Shared()
+var actionShared = new SharedActions()
 
 Given("I navigate to website", () => {
-  cy.visit("/");
+ actionShared.visitPage("/")
 });
 
 When('I should see the home page visible successfully', () => {
@@ -41,7 +43,7 @@ Then("I should see product details including name, category, price, availability
 });
 
 Then("Go To HomePage",()=>{
-  cy.visit("/")
+  actionShared.visitPage("/")
   cy.wait(2000)
 })
 

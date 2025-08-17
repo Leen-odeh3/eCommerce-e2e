@@ -4,12 +4,14 @@ import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import Shared from '../../../pageObjects/shared/assertions.cy';
 import subscriptionActions from '../../../pageObjects/subscriptionPage/actions.cy';
 import subscriptionAssertions from '../../../pageObjects/subscriptionPage/assertions.cy';
+import SharedActions from '../../../pageObjects/shared/actions.cy';
 var shared = new Shared()
 var action = new subscriptionActions()
 var assertion = new subscriptionAssertions()
+var actionShared= new SharedActions()
 
 Given('Navigate to website', () => {
-    cy.visit("/")
+    actionShared.visitPage("/")
 });
 
 Then('Verify that home page is visible successfully', () => {

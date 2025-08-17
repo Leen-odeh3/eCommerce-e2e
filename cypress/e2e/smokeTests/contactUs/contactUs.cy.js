@@ -3,13 +3,15 @@
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import ContactUsActions from "../../../pageObjects/contactUs/actions.cy";
 import ContactUsAssertions from "../../../pageObjects/contactUs/assertion.cy";
+import SharedActions from '../../../pageObjects/shared/actions.cy';
 
 const actions = new ContactUsActions();
 const assertions = new ContactUsAssertions();
+const actionShared= new SharedActions()
 
 // Background
 Given("I open the Automation Exercise website", () => {
-  cy.visit("/");
+  actionShared.visitPage("/")
 });
 
 Given("I navigate to the Contact Us page", () => {
@@ -41,11 +43,11 @@ When("I click the submit button", () => {
 });
 
 When("I leave the email field empty", () => {
-  
+  //not doing anything #empty
 });
 
 When("I click the Home button", () => {
-  actions.clickHome();
+  actionShared.clickToLink("a","Home");
 });
 
 Then("I should see a success message {string}", () => {

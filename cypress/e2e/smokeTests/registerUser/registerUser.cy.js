@@ -3,14 +3,16 @@ import { Given, When, Then, Before } from 'cypress-cucumber-preprocessor/steps';
 import RegisterUserActions from '../../../pageObjects/registerUser/actions.cy';
 import RegisterUserAssertions from '../../../pageObjects/registerUser/assertions.cy';
 import Shared from '../../../pageObjects/shared/assertions.cy';
+import SharedActions from '../../../pageObjects/shared/actions.cy';
 
 const action = new RegisterUserActions()
 const assertion = new RegisterUserAssertions()
 const assertionShared = new Shared()
+const actionShared= new SharedActions()
 
 // Background
 Given("I am on the home page", () => {
-  action.visiteHomePage()
+  actionShared.visitPage("/")
   assertionShared.verifyUserInPage('/')
 });
 
