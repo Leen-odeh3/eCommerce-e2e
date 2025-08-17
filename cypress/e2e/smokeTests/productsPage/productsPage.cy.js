@@ -46,14 +46,24 @@ Then("Go To HomePage",()=>{
 })
 
 When('I enter {string} in search input and click search button', (name) => {
-  action.typeInSearch(name)
-  action.clickSearchIcon()
+  action.typeInSearch(name);
+  action.clickSearchIcon();
 });
 
 Then('I should see {string}', (text) => {
-  assertion.seeSearchedTitle(text)
+  assertion.seeSearchedTitle(text);
 });
 
 Then('I should see all products related to search', () => {
-  assertion.seeRelatedProductSearch()
+  assertion.seeRelatedProductSearch();
 });
+
+Then('I should see more than one product related to search', () => {
+  assertion.verifyMultipleSearchResults();
+});
+
+Then('each displayed product name should contain the word {string}', (keyword) => {
+  assertion.verifySearchResultsContainKeyword(keyword);
+});
+
+

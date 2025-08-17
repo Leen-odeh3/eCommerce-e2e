@@ -28,5 +28,27 @@ seeRelatedProductSearch(){
     });
 }
 
+verifyMultipleSearchResults() {
+  cy.get('.productinfo.text-center').should('have.length.greaterThan', 3); 
 }
+
+verifySearchResultsContainKeyword(keyword) {
+    let found = false;
+    cy.get('.product-image-wrapper')
+      .each(($el) => {
+        cy.wrap($el)
+          .find('p')
+          .invoke('text')
+          .then((text) => {
+            if (text.toLowerCase().includes(keyword.toLowerCase())) {
+              found = true;
+            }
+          });
+      })
+      .then(() => {
+        expect(found).to.be.true;
+      });
+  }
+}
+
 export default productsPageAssertions
