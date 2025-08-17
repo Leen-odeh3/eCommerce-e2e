@@ -25,11 +25,6 @@ class RegisterUserActions {
     this.invalidEmail = userData.invalidEmail;
   }
 
-  visiteHomePage() {
-    cy.visit("/");
-    return this;
-  }
-
   clickOnSignUp(element, btnText) {
     cy.contains(element, btnText).click();
   }
@@ -43,6 +38,7 @@ class RegisterUserActions {
 
   registerWithExistingEmail() {
     cy.getByDataQa("signup-email").type(this.loginEmail);
+    cy.wait(1000)
   }
 
   enterInvalidEmail() {

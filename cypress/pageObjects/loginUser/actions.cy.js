@@ -4,10 +4,6 @@ const userData = generateUserData();
 
 class loginUserActions {
 
-  visitLoginPage() {
-    cy.visit('/login');
-  }
-
   enterValidCredentials() {
     cy.getByDataQa('login-email').type(userData.loginEmail);
     cy.getByDataQa('login-password').type(userData.loinPass);

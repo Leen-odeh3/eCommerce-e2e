@@ -4,13 +4,15 @@ import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import loginUserActions from '../../../pageObjects/loginUser/actions.cy';
 import loginUserAssertions from '../../../pageObjects/loginUser/assertion.cy';
 import Shared from '../../../pageObjects/shared/assertions.cy';
+import SharedActions from '../../../pageObjects/shared/actions.cy';
 
 const action = new loginUserActions();
 const assertion = new loginUserAssertions()
 const assertionShared = new Shared();
+const actionShared = new SharedActions()
 
 Given("I am on the login page", () => {
-  action.visitLoginPage();
+  actionShared.visitPage("/login")
   assertionShared.verifyUserInPage("/login");
 });
 
