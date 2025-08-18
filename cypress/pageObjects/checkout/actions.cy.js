@@ -1,6 +1,7 @@
 class checkoutAction {
 
   addTextInBox() {
+    cy.wait(2000)
     cy.get("[name='message']").type("test data....");
   }
 

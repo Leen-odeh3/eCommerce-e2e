@@ -15,7 +15,7 @@ Feature: Place Order after Registering Before Checkout
 
     When I click 'Proceed To Checkout'
     When I enter a description in the comment text area
-    And I click the 'Place Order' button
+    # And I click the 'Place Order' button
     And I enter payment details: Name on Card, Card Number, CVC, Expiration date
     And I click the 'Pay and Confirm Order' button
 

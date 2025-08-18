@@ -69,10 +69,10 @@ When("I enter a description in the comment text area", () => {
    actionShared.clickToLink("a","Place Order")
 });
 
-And("I click the 'Place Order' button", () => {
- checkout_action.addTextInBox()
-   actionShared.clickToLink("a","Place Order")
-});
+// And("I click the 'Place Order' button", () => {
+// //  checkout_action.addTextInBox()
+//    actionShared.clickToLink("a","Place Order")
+// });
 
 And("I enter payment details: Name on Card, Card Number, CVC, Expiration date", () => {
   checkout_action.enterPaymentDetails();
