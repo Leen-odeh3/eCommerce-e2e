@@ -14,5 +14,9 @@ class Shared {
     VerifyIsVisible(tag, text) {
         cy.contains(tag, text).should('be.visible').click()
     }
+
+     VerifyIsVisibleWithoutClick(tag, text) {
+        cy.contains(tag, text).should('be.visible')
+    }
 }
 export default Shared;
