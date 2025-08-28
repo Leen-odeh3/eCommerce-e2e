@@ -5,4 +5,4 @@ class removeProductAction{
     }
 }
 
-export default removeProductAction
+export default new removeProductAction()

@@ -4,7 +4,6 @@ import Shared from '../../../pageObjects/shared/assertions.cy'
 import addProductActions from '../../../pageObjects/addProduct/actions.cy'
 import RegisterUserActions from '../../../pageObjects/registerUser/actions.cy';
 import RegisterUserAssertions from '../../../pageObjects/registerUser/assertions.cy';
-import checkoutAction from '../../../pageObjects/checkout/actions.cy';
 import checkoutAssertion from '../../../pageObjects/checkout/assertion.cy'
 
 

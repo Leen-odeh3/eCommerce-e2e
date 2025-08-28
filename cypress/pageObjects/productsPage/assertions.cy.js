@@ -51,4 +51,4 @@ verifySearchResultsContainKeyword(keyword) {
   }
 }
 
-export default productsPageAssertions
+export default new productsPageAssertions()
