@@ -14,4 +14,4 @@ class BrandAssertions {
   }
 }
 
-export default BrandAssertions;
+export default new BrandAssertions();

@@ -15,4 +15,4 @@ class ContactUsAssertions {
 }
 }
 
-export default ContactUsAssertions;
+export default new ContactUsAssertions()

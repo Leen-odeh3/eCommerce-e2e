@@ -16,4 +16,4 @@ class scrollAssertion {
     }
 }
 
-export default scrollAssertion
+export default new scrollAssertion()

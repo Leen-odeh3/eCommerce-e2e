@@ -6,9 +6,9 @@ class Shared {
     }
 
     verifyLogoutAndDeleteAccount() {
-        cy.get('a').contains('Logout').should('exist').and('be.visible');
-        cy.get('a').contains('Delete Account').should('exist').and('be.visible');
-        cy.get('a').contains('Logged in as').should('exist').and('be.visible');
+        cy.get('a').contains('Logout').should('be.visible');
+        cy.get('a').contains('Delete Account').should('be.visible');
+        cy.get('a').contains('Logged in as').should('be.visible');
     }
 
     VerifyIsVisible(tag, text) {
@@ -19,4 +19,4 @@ class Shared {
         cy.contains(tag, text).should('be.visible')
     }
 }
-export default Shared;
+export default new Shared();

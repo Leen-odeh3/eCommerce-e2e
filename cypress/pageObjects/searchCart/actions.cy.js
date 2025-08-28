@@ -13,4 +13,4 @@ class SearchCartActions {
   }
 }
 
-export default SearchCartActions;
+export default new SearchCartActions()

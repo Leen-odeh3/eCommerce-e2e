@@ -70,4 +70,4 @@ class RegisterUserActions {
   }
 }
 
-export default RegisterUserActions;
+export default new RegisterUserActions()

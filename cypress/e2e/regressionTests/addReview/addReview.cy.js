@@ -4,45 +4,41 @@ import ProductReviewActions from "../../../pageObjects/addReview/ProductReviewAc
 import ProductReviewAssertions from "../../../pageObjects/addReview/ProductReviewAssertions.cy";
 import SharedActions from '../../../pageObjects/shared/actions.cy';
 
-const actions = new ProductReviewActions();
-const assertions = new ProductReviewAssertions();
-const shared = new SharedActions
-
 Given("I navigate to website", () => {
-  shared.visitPage("/")
+  SharedActions.visitPage("/")
 });
 
 When("I click on {string} button", (btn) => {
   if (btn === "Products") {
-    actions.clickProductsButton();
+    ProductReviewActions.clickProductsButton();
   } else if (btn === "View Product") {
-    actions.clickViewProduct();
+    ProductReviewActions.clickViewProduct();
   }
 });
 
 Then("I should be navigated to ALL PRODUCTS page successfully", () => {
-  assertions.verifyAllProductsPage();
+  ProductReviewAssertions.verifyAllProductsPage();
 });
 
 Then("I should see {string} section", (section) => {
   if (section === "Write Your Review") {
-    assertions.verifyReviewSection();
+    ProductReviewAssertions.verifyReviewSection();
   }
 });
 
 When(
   "I enter name {string}, email {string} and review {string}",
   (name, email, review) => {
-    actions.enterReviewDetails(name, email, review);
+    ProductReviewActions.enterReviewDetails(name, email, review);
   }
 );
 
 When("I click on {string} review button", (btn) => {
   if (btn === "Submit") {
-    actions.clickSubmitReview();
+    ProductReviewActions.clickSubmitReview();
   }
 });
 
 Then("I should see success message {string}", (msg) => {
-  assertions.verifySuccessMessage(msg);
+  ProductReviewAssertions.verifySuccessMessage(msg);
 });

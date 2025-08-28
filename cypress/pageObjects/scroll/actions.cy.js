@@ -1,6 +1,5 @@
 class scrollAction {
 
-
     scrollToFooter() {
         cy.scrollTo('bottom');
     }
@@ -19,4 +18,4 @@ class scrollAction {
     }
 }
 
-export default scrollAction
+export default new scrollAction()

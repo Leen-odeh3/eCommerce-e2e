@@ -22,4 +22,4 @@ class checkoutAction {
   }
 }
 
-export default checkoutAction
+export default new checkoutAction()

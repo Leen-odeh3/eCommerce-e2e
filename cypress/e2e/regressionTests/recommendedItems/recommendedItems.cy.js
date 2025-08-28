@@ -3,34 +3,29 @@ import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import RecommendedActions from "../../../pageObjects/recommendedItems/actions.cy";
 import RecommendedAssertions from "../../../pageObjects/recommendedItems/assertion.cy";
 import SharedActions from "../../../pageObjects/shared/actions.cy";
-import SharedAssertions from "../../../pageObjects/shared/assertions.cy";
-
-const actions = new RecommendedActions();
-const assertions = new RecommendedAssertions();
-const sharedActions = new SharedActions();
-const sharedAssertions = new SharedAssertions();
+import Shared from "../../../pageObjects/shared/assertions.cy";
 
 Given("I navigate to the homepage", () => {
-  sharedActions.visitPage("/");
-  sharedAssertions.verifyUserInPage("/");
+  SharedActions.visitPage("/");
+  Shared.verifyUserInPage("/");
 });
 
 When("I scroll to bottom of the page", () => {
-  actions.scrollToBottom();
+  RecommendedActions.scrollToBottom();
 });
 
 Then('I should see "RECOMMENDED ITEMS" section', () => {
-  assertions.verifyRecommendedSection();
+  RecommendedAssertions.verifyRecommendedSection();
 });
 
 When('I click on "Add To Cart" on recommended product', () => {
-  actions.addRecommendedProductToCart();
+  RecommendedActions.addRecommendedProductToCart();
 });
 
 When('I click on "View Cart" button', () => {
-  actions.clickViewCartButton();
+  RecommendedActions.clickViewCartButton();
 });
 
 Then("I should see the product in the cart page", () => {
-  assertions.verifyProductInCart();
+  RecommendedAssertions.verifyProductInCart();
 });

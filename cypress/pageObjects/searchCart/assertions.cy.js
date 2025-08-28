@@ -17,4 +17,4 @@ class SearchCartAssertions {
   }
 }
 
-export default SearchCartAssertions;
+export default new SearchCartAssertions()

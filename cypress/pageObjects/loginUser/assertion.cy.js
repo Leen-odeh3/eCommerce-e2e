@@ -5,4 +5,4 @@ class loginUserAssertions {
     }
 }
 
-export default loginUserAssertions;
+export default new loginUserAssertions()

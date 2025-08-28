@@ -1,40 +1,34 @@
 ///<reference types="cypress"/>
-import { Given, When, Then, Before } from 'cypress-cucumber-preprocessor/steps';
+import { Given, When, Then} from 'cypress-cucumber-preprocessor/steps';
 import loginUserActions from "../../../pageObjects/loginUser/actions.cy"
 import Shared from '../../../pageObjects/shared/assertions.cy';
 import Logout from '../../../pageObjects/Logout/actions.cy';
 import SharedActions from '../../../pageObjects/shared/actions.cy';
 
-const actionlogin = new loginUserActions()
-const assertionShared= new Shared()
-const action= new Logout()
-const actionShared= new SharedActions()
-
 Given("I launch the browser and navigate to login page", () => {
-actionShared.visitPage("/login")
+SharedActions.visitPage("/login")
 });
 
 Then("I should see the login page", () => {
-assertionShared.verifyUserInPage("/login")
+Shared.verifyUserInPage("/login")
 });
 
 When("I enter correct email address and password", () => {
-   actionlogin.enterValidCredentials()
+loginUserActions.enterValidCredentials()
 });
 
 And("I click login button", () => {
-actionlogin.clickLoginButton()
+loginUserActions.clickLoginButton()
 });
 
 Then("I should see Logged in as username is visible", () => {
-   cy.wait(1000)
-assertionShared.verifyLogoutAndDeleteAccount()
+Shared.verifyLogoutAndDeleteAccount()
 });
 
 When("I click Logout button", () => {
-action.deleteAccount()
+Logout.deleteAccount()
 });
 
 Then("I should be nevigated to login page", () => {
-actionShared.visitPage("/login")
+SharedActions.visitPage("/login")
 });

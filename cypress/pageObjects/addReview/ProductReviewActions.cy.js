@@ -19,4 +19,4 @@ class ProductReviewActions {
   }
 }
 
-export default ProductReviewActions
+export default new ProductReviewActions()
