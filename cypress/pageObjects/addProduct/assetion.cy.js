@@ -5,7 +5,7 @@ class addProductAssertions {
   }
 
   check() {
-    cy.get(".cart_quantity .disabled").should('have.length.greaterThan', 0)
+    cy.get('#quantity').should('have.length.greaterThan', 0)
   }
 }
 

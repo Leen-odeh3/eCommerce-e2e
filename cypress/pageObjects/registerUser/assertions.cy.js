@@ -1,7 +1,7 @@
 class RegisterUserAssertions {
 
-    showMessage(tag, msg) {
-        cy.contains(tag ,msg).should('be.visible')
+    showMessage(tag , msg) {
+        cy.contains(tag,msg).should('be.visible')
     }
 }
 

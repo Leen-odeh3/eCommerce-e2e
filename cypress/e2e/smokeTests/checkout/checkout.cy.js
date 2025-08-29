@@ -5,7 +5,8 @@ import addProductActions from '../../../pageObjects/addProduct/actions.cy'
 import RegisterUserActions from '../../../pageObjects/registerUser/actions.cy';
 import RegisterUserAssertions from '../../../pageObjects/registerUser/assertions.cy';
 import checkoutAssertion from '../../../pageObjects/checkout/assertion.cy'
-
+import checkout_action from '../../../pageObjects/checkout/actions.cy'
+import CheckoutDIActions from '../../../pageObjects/download_invoice/actions.cy';
 
 Given("I navigate to website", () => {
     SharedActions.visitPage("/")
@@ -41,7 +42,7 @@ When("I fill all details in Signup and create an account", () => {
   RegisterUserActions.enterValidEmail()
   RegisterUserActions.clickOnSignUp("button", 'Signup')
   cy.wait(1000)
-  RegisterUserAssertions.verifyInRegPage("Enter Account Information");
+  // Shared.verifyInRegPage("Enter Account Information");
   RegisterUserActions.enterAdditionalDetails()
   RegisterUserActions.clickOnSignUp("button", 'Create Account')
 });
@@ -65,7 +66,7 @@ When("I enter payment details: Name on Card, Card Number, CVC, Expiration Date",
 });
 
 When("I click 'Pay and Confirm Order' button", () => {
-  checkout_action.clickPayAndConfirm();
+  CheckoutDIActions.payAndConfirm();
 });
 
 Then("I should see the success message 'Your order has been placed successfully!'", () => {

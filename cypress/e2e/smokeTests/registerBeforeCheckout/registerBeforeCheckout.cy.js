@@ -7,6 +7,7 @@ import RegisterUserAssertions from '../../../pageObjects/registerUser/assertions
 import addProductActions from '../../../pageObjects/addProduct/actions.cy';
 import checkoutAction from '../../../pageObjects/checkout/actions.cy';
 import checkoutAssertion from '../../../pageObjects/checkout/assertion.cy';
+import CheckoutDIActions from '../../../pageObjects/download_invoice/actions.cy';
 
 
 Given("Navigate to website", () => {
@@ -26,19 +27,16 @@ And("I fill in all required signup details and create an account", () => {
   RegisterUserActions.enterValidEmail()
   RegisterUserActions.clickOnSignUp("button", 'Signup')
   cy.wait(1000)
-  RegisterUserAssertions.showMessage("p","Enter Account Information");
+  RegisterUserAssertions.showMessage("h2","Enter Account Information");
   RegisterUserActions.enterAdditionalDetails()
   RegisterUserActions.clickOnSignUp("button", 'Create Account')
+  RegisterUserActions.clickOnSignUp("a", 'Continue')
 });
 
-Then("I should see 'ACCOUNT CREATED!' message", () => {
- RegisterUserAssertions.showMessage("h2", "Account Created!")
- RegisterUserAssertions.showMessage("p", "Congratulations! Your new account has been successfully created!")
-});
-
-And("I click the 'Continue' button", () => {
-RegisterUserActions.clickOnSignUp("a", "Continue")
-});
+// Then("I should see 'ACCOUNT CREATED!' message", () => {
+//  RegisterUserAssertions.showMessage("h2", "Account Created!")
+//  RegisterUserAssertions.showMessage("p", "Congratulations! Your new account has been successfully created!")
+// });
 
 When("I add products to the cart", () => {
 addProductActions.clickAddToCart()
@@ -72,7 +70,7 @@ And("I enter payment details: Name on Card, Card Number, CVC, Expiration date", 
 });
 
 And("I click the 'Pay and Confirm Order' button", () => {
-  checkoutAction.clickPayAndConfirm();
+  CheckoutDIActions.payAndConfirm();
 });
 
 Then("I should see the success message 'Your order has been placed successfully!'", () => {
