@@ -29,4 +29,4 @@ class productsPageActions {
 }
 
 
-export default productsPageActions
+export default new productsPageActions()

@@ -5,31 +5,27 @@ import BrandAssertions from '../../../pageObjects/brands/assertions.cy';
 import SharedActions from '../../../pageObjects/shared/actions.cy';
 import Shared from '../../../pageObjects/shared/assertions.cy';
 
-const brandAction = new BrandActions();
-const brandAssertion = new BrandAssertions();
-const sharedAction = new SharedActions();
-const sharedAssertion = new Shared();
 
 // Background
 Given("I am on the home page", () => {
-  sharedAction.visitPage("/");
-  sharedAssertion.verifyUserInPage("/");
+  SharedActions.visitPage("/");
+  Shared.verifyUserInPage("/");
 });
 
 // Scenario steps
 When("I click on the 'Products' button", () => {
-  sharedAction.clickToLink("a", "Products");
+  SharedActions.clickToLink("a", "Products");
 });
 
 Then("I should see the 'Brands' section visible", () => {
-  brandAssertion.verifyBrandsSectionVisible();
+  BrandAssertions.verifyBrandsSectionVisible();
 });
 
 When("I click on the brand {string}", (brandName) => {
-  brandAction.clickOnBrand(brandName);
+  BrandActions.clickOnBrand(brandName);
 });
 
 Then("I should be navigated to the {string} brand page and see its products", (brandName) => {
-  brandAssertion.verifyUserInBrandPage(brandName);
-  brandAssertion.verifyBrandProductsVisible();
+  BrandAssertions.verifyUserInBrandPage(brandName);
+  BrandAssertions.verifyBrandProductsVisible();
 });

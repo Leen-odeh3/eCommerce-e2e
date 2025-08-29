@@ -5,40 +5,36 @@ import Shared from '../../../pageObjects/shared/assertions.cy';
 import subscriptionActions from '../../../pageObjects/subscriptionPage/actions.cy';
 import subscriptionAssertions from '../../../pageObjects/subscriptionPage/assertions.cy';
 import SharedActions from '../../../pageObjects/shared/actions.cy';
-var shared = new Shared()
-var action = new subscriptionActions()
-var assertion = new subscriptionAssertions()
-var actionShared= new SharedActions()
 
 Given('Navigate to website', () => {
-    actionShared.visitPage("/")
+    SharedActions.visitPage("/")
 });
 
 Then('Verify that home page is visible successfully', () => {
-    shared.verifyUserInPage("/")
+    Shared.verifyUserInPage("/")
 });
 
 When('Scroll down to footer', () => {
-    action.scrollToFooter()
+    subscriptionActions.scrollToFooter()
 });
 
 Then('Verify text {string}', (word) => {
-    assertion.verifyTextShow(word)
+    subscriptionAssertions.verifyTextShow(word)
 });
 
 Then('Enter email address in input and click arrow button', () => {
-    action.enterEmail()
+    subscriptionActions.enterEmail()
 });
 
 Then("Verify success message 'You have been successfully subscribed!' is visible", () => {
-    assertion.showSuccessMessage()
+    subscriptionAssertions.showSuccessMessage()
 });
 
 Then("Click on cart link", () => {
-    action.clickOnCartLink()
+    subscriptionActions.clickOnCartLink()
 })
 
 And('Verify that cart page is visible successfully', () => {
-    shared.verifyUserInPage("/view_cart")
+    Shared.verifyUserInPage("/view_cart")
 });
 

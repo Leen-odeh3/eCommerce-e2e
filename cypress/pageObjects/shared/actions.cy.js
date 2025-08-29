@@ -9,4 +9,4 @@ class SharedActions {
     }
 }
 
-export default SharedActions
+export default new SharedActions()

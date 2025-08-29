@@ -13,13 +13,9 @@ class checkoutAction {
     cy.getByDataQa('expiry-year').type('2025');
   }
 
-  clickPayAndConfirm() {
-    cy.getByDataQa('pay-button').click();
-  }
-
   clickDeleteAccount() {
     cy.getByDataQa('delete-account-button').click();
   }
 }
 
-export default checkoutAction
+export default new checkoutAction()

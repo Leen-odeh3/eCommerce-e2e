@@ -8,4 +8,4 @@ class checkoutAssertion{
 
 }
 
-export default checkoutAssertion
+export default new checkoutAssertion()

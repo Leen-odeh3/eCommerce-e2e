@@ -5,71 +5,64 @@ import RegisterUserAssertions from '../../../pageObjects/registerUser/assertions
 import Shared from '../../../pageObjects/shared/assertions.cy';
 import SharedActions from '../../../pageObjects/shared/actions.cy';
 
-const action = new RegisterUserActions()
-const assertion = new RegisterUserAssertions()
-const assertionShared = new Shared()
-const actionShared= new SharedActions()
-
-// Background
 Given("I am on the home page", () => {
-  actionShared.visitPage("/")
-  assertionShared.verifyUserInPage('/')
+  SharedActions.visitPage("/")
+  Shared.verifyUserInPage('/')
 });
 
-// Scenario 1: Successful user registration
 //@smoke
 When("I click on the 'Signup / Login' button", (element, btnText) => {
-  action.clickOnSignUp("a", "Signup / Login")
-  assertionShared.verifyUserInPage('/login')
+  RegisterUserActions.clickOnSignUp("a", "Signup / Login")
+  Shared.verifyUserInPage('/login')
 });
 
 When("I enter a new name and a valid email address", () => {
-  action.enterName()
-  action.enterValidEmail()
+  RegisterUserActions.enterName()
+  RegisterUserActions.enterValidEmail()
 });
 
-When("I click the 'Signup' button", (element, btnText) => {
-  action.clickOnSignUp("button", 'Signup')
+When("I click the 'Signup' button", (element, btnText) => { 
+  RegisterUserActions.clickOnSignUp("button", 'Signup')
 });
 
 When("I fill all required registration details", () => {
   cy.wait(1000)
-  assertion.verifyInRegPage("Enter Account Information");
-  action.enterAdditionalDetails()
+  RegisterUserAssertions.showMessage("h2","Enter Account Information");
+  RegisterUserActions.enterAdditionalDetails()
 });
 
 When("I click the 'Create Account' button", () => {
-  action.submitRegistration()
+  RegisterUserActions.submitRegistration()
   cy.wait(1000)
 });
 
 Then("I should see the message {string}", (tag, message) => {
-  assertion.showMessage("h2", "Account Created!")
-  assertion.showMessage("p", "Congratulations! Your new account has been successfully created!")
+  RegisterUserAssertions.showMessage("h2", "Account Created!")
+  RegisterUserAssertions.showMessage("p", "Congratulations! Your new account has been successfully created!")
 });
 
 Then("I click the 'Continue' button", (ele, text) => {
-  action.clickOnSignUp("a", "Continue")
+  RegisterUserActions.clickOnSignUp("a", "Continue")
 });
 
 Then("I should be logged in as the new user", (tag, message) => {
-assertionShared.verifyLogoutAndDeleteAccount();
+Shared.verifyLogoutAndDeleteAccount();
 });
 
-// Scenario 2: Register with an existing email
 //@regression
 
 When("I enter a name and an existing email address", () => {
-  action.enterName();
-  action.registerWithExistingEmail();
+  RegisterUserActions.enterName();
+  RegisterUserActions.registerWithExistingEmail();
 });
 
 Then("I should see the error message {string}", (errorMessage) => {
-  assertion.showMessage("p", errorMessage);
+  console.log(errorMessage)
+  RegisterUserAssertions.showMessage("p", errorMessage, { timeout: 10000 });
 });
 
 When("I enter a new name and an invalid email address", () => {
-  action.enterInvalidEmail()
+  RegisterUserActions.enterInvalidEmail()
 });
 
 Then("should see the error message {string}", (errorMessage) => {

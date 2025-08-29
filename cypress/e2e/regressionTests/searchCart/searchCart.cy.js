@@ -3,61 +3,55 @@ import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 import SearchCartActions from '../../../pageObjects/searchCart/actions.cy';
 import SearchCartAssertions from '../../../pageObjects/searchCart/assertions.cy';
 import SharedActions from '../../../pageObjects/shared/actions.cy';
-import SharedAssertions from '../../../pageObjects/shared/assertions.cy';
+import Shared from '../../../pageObjects/shared/assertions.cy';
 import loginUserActions from '../../../pageObjects/loginUser/actions.cy';
 
-const action = new SearchCartActions();
-const assertion = new SearchCartAssertions();
-const sharedAction = new SharedActions();
-const sharedAssertion = new SharedAssertions();
-const loginAction = new loginUserActions();
-
 Given("I am on the home page", () => {
-  sharedAction.visitPage("/");
-  sharedAssertion.verifyUserInPage("/");
+  SharedActions.visitPage("/");
+  Shared.verifyUserInPage("/");
 });
 
 When("I click on the 'Products' button", () => {
-  sharedAction.clickToLink("a", "Products");
+  SharedActions.clickToLink("a", "Products");
 });
 
 Then("I should be navigated to the ALL PRODUCTS page", () => {
-  assertion.verifyAllProductsPage();
+  SearchCartAssertions.verifyAllProductsPage();
 });
 
 When("I search for {string}", (productName) => {
-  action.searchProduct(productName);
+  SearchCartActions.searchProduct(productName);
 });
 
 Then("I should see the 'SEARCHED PRODUCTS' section", () => {
-  assertion.verifySearchedProductsSection();
+  SearchCartAssertions.verifySearchedProductsSection();
 });
 
 Then("I should see all related products", () => {
-  assertion.verifySearchedProductsVisible();
+  SearchCartAssertions.verifySearchedProductsVisible();
 });
 
 When("I add all searched products to the cart", () => {
-  action.addSearchedProductsToCart();
+  SearchCartActions.addSearchedProductsToCart();
 });
 
 When("I click the 'Cart' button", () => {
-  sharedAction.clickToLink("a", "Cart");
+  SharedActions.clickToLink("a", "Cart");
 });
 
 Then("I should see the searched products in the cart", () => {
-  assertion.verifyProductsInCart();
+  SearchCartAssertions.verifyProductsInCart();
 });
 
 When("I click on the 'Signup / Login' button", () => {
-  sharedAction.clickToLink("a", "Signup / Login");
+  SharedActions.clickToLink("a", "Signup / Login");
 });
 
 When("I login with valid credentials", () => {
-  loginAction.enterValidCredentials();
-  loginAction.clickLoginButton();
+  loginUserActions.enterValidCredentials();
+  loginUserActions.clickLoginButton();
 });
 
 When("I click the 'Cart' button again", () => {
-  sharedAction.clickToLink("a", "Cart");
+  SharedActions.clickToLink("a", "Cart");
 });

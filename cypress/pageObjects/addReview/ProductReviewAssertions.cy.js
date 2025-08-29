@@ -14,4 +14,4 @@ class ProductReviewAssertions {
   }
 }
 
-export default ProductReviewAssertions
+export default new ProductReviewAssertions()

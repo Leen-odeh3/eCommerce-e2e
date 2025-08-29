@@ -11,4 +11,4 @@ showSuccessMessage(){
 }
 
 }
-export default subscriptionAssertions
+export default new subscriptionAssertions()

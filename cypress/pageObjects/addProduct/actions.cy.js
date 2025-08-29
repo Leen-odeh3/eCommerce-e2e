@@ -7,4 +7,4 @@ class addProductActions{
     }
   }
 }
-export default addProductActions
+export default new addProductActions()

@@ -13,4 +13,4 @@ class subscriptionActions{
         cy.contains("a","Cart").click()
     }
 }
-export default subscriptionActions
+export default new subscriptionActions()

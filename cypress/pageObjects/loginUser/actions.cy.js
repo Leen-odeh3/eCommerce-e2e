@@ -25,4 +25,4 @@ class loginUserActions {
 
 }
 
-export default loginUserActions;
+export default new loginUserActions()

@@ -18,4 +18,4 @@ addRecommendedProductToCart() {
   }
 }
 
-export default RecommendedActions;
+export default new RecommendedActions()

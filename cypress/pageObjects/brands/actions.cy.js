@@ -4,4 +4,4 @@ class BrandActions {
   }
 }
 
-export default BrandActions;
+export default new BrandActions()

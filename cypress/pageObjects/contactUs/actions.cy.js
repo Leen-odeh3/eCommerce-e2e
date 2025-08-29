@@ -29,4 +29,4 @@ class ContactUsActions {
   }
 }
 
-export default ContactUsActions;
+export default new ContactUsActions()

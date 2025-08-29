@@ -5,4 +5,4 @@ class Logout{
     }
 }
 
-export default Logout
+export default new Logout()

@@ -11,4 +11,4 @@ class viewCategoryProductsActions {
     }
 }
 
-export default viewCategoryProductsActions
+export default new viewCategoryProductsActions()

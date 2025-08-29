@@ -6,37 +6,33 @@ import loginUserAssertions from '../../../pageObjects/loginUser/assertion.cy';
 import Shared from '../../../pageObjects/shared/assertions.cy';
 import SharedActions from '../../../pageObjects/shared/actions.cy';
 
-const action = new loginUserActions();
-const assertion = new loginUserAssertions()
-const assertionShared = new Shared();
-const actionShared = new SharedActions()
 
 Given("I am on the login page", () => {
-  actionShared.visitPage("/login")
-  assertionShared.verifyUserInPage("/login");
+  SharedActions.visitPage("/login")
+  Shared.verifyUserInPage("/login");
 });
 
 When("I enter valid login credentials", () => {
-  action.enterValidCredentials();
+  loginUserActions.enterValidCredentials();
 });
 
 When("I enter an invalid email and valid password", () => {
-  action.enterInvalidEmailAndValidPassword();
+  loginUserActions.enterInvalidEmailAndValidPassword();
 });
 
 When("I enter a valid email and incorrect password", () => {
-  action.enterValidEmailAndInvalidPassword();
+  loginUserActions.enterValidEmailAndInvalidPassword();
 });
 
 When("I click the 'Login' button", () => {
-  action.clickLoginButton();
+  loginUserActions.clickLoginButton();
 });
 
 Then("I should be redirected to mainPage", () => {
-  assertionShared.verifyUserInPage("/");
-  assertionShared.verifyLogoutAndDeleteAccount();
+  Shared.verifyUserInPage("/");
+  Shared.verifyLogoutAndDeleteAccount();
 });
 
 Then("I should see the error message {string}", (errorMessage) => {
-  assertion.verifyErrorMessage("Your email or password is incorrect!")
+  loginUserAssertions.verifyErrorMessage("Your email or password is incorrect!")
 });

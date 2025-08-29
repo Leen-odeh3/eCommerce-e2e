@@ -9,4 +9,4 @@ class RecommendedAssertions {
   }
 }
 
-export default RecommendedAssertions;
+export default new RecommendedAssertions()
