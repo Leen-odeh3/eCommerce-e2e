@@ -5,13 +5,13 @@ class ProductReviewActions {
   }
 
   clickViewProduct() {
-    cy.get('.choose > .nav > li > a').first().click()
+    cy.get('.choose a').first().click();
   }
 
   enterReviewDetails(name, email, review) {
-    cy.get('#name').type(name)
-    cy.get('#email').type(email)
-    cy.get('#review').type(review)
+    cy.get('#name').clear().type(name);
+    cy.get('#email').clear().type(email);
+    cy.get('#review').clear().type(review);
   }
 
   clickSubmitReview() {

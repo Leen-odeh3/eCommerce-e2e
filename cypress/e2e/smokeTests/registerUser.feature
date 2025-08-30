@@ -8,7 +8,7 @@ Feature: Create New Account
 
   @smoke
   Scenario: Successful user registration
-    When I click on the 'Signup / Login' button
+    When I click on the Signup / Login button
     And I enter a new name and a valid email address
     And I click the 'Signup' button
     And I fill all required registration details
@@ -19,14 +19,14 @@ Feature: Create New Account
 
   @regression
   Scenario: Register with an existing email
-    When I click on the 'Signup / Login' button
+    When I click on the Signup / Login button
     And I enter a name and an existing email address
     And I click the 'Signup' button
     Then I should see the error message "Email Address already exist!"
 
   @regression
   Scenario: Register with an invalid email format
-    When I click on the 'Signup / Login' button
+    When I click on the Signup / Login button
     And I enter a new name and an invalid email address
     And I click the 'Signup' button
     Then should see the error message "please include an '@' in the email address."

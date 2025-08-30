@@ -14,15 +14,18 @@ class productsPageActions {
         })
     }
 
-    clickViewProduct(){
-  cy.get(".product-image-wrapper").first().contains("View Product").click();
+    clickViewProduct(index = 0) {
+        cy.get(".product-image-wrapper")
+            .eq(index)
+            .contains("View Product")
+            .click();
     }
-  
-    typeInSearch(name){
+
+    typeInSearch(name) {
         cy.get("#search_product").type(name);
     }
 
-    clickSearchIcon(){
+    clickSearchIcon() {
         cy.get("#submit_search").click();
     }
 

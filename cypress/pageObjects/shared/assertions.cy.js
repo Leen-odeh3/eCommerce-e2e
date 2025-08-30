@@ -5,11 +5,12 @@ class Shared {
         cy.location("hostname").should("eq", "www.automationexercise.com");
     }
 
-    verifyLogoutAndDeleteAccount() {
-        cy.get('a').contains('Logout').should('be.visible');
-        cy.get('a').contains('Delete Account').should('be.visible');
-        cy.get('a').contains('Logged in as').should('be.visible');
-    }
+verifyLogoutAndDeleteAccount() {
+  cy.get('a[href="/logout"]').should('be.visible');
+  cy.get('a[href="/delete_account"]').should('be.visible');
+  cy.get('ul.nav a').contains('Logged in as').should('be.visible');
+}
+
 
     VerifyIsVisible(tag, text) {
         cy.contains(tag, text).should('be.visible').click()
