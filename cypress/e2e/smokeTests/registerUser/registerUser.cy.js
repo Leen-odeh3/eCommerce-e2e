@@ -11,7 +11,7 @@ Given("I am on the home page", () => {
 });
 
 //@smoke
-When("I click on the 'Signup / Login' button", (element, btnText) => {
+When("I click on the Signup / Login button", (element, btnText) => {
   RegisterUserActions.clickOnSignUp("a", "Signup / Login")
   Shared.verifyUserInPage('/login')
 });

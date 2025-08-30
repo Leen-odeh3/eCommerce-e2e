@@ -10,7 +10,7 @@ export const generateUserData= () => {
   const confirmationEmail = randomEmail;
   const randomPassword = faker.internet.password();
   const loginEmail = "leenodeh2877@gmail.com"; 
-  const loinPass="Leenodeh123"
+  const loinPass="Leenodeh123@"
   const birthDay = faker.helpers.rangeToNumber({ min: 1, max: 30 });
   const birthMonth = faker.date.month();
   const birthYear = "2001";

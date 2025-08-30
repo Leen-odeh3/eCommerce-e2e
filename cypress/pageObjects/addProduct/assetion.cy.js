@@ -1,11 +1,17 @@
 class addProductAssertions {
 
   showConfirmAdded() {
-    cy.get(".btn-success").last().should("be.visible").click()
+    cy.contains('.btn-success', 'Continue Shopping')
+      .should('be.visible')
+      .click();
   }
 
   check() {
-    cy.get('#quantity').should('have.length.greaterThan', 0)
+    cy.get('#quantity')
+      .invoke('val')
+      .then((val) => {
+        expect(Number(val)).to.be.greaterThan(0);
+      });
   }
 }
 
