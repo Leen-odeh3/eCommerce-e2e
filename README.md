@@ -6,29 +6,31 @@ This project is an **automation exercise** for an e-commerce website, using **Cy
 ## Test Cases Covered
 Below is the list of test cases for practice and automation:
 
-1. Register User  
-2. Login User with correct email and password  
-3. Login User with incorrect email and password  
-4. Logout User  
-5. Register User with existing email  
-6. Contact Us Form  
-7. Verify All Products and product detail page  
-8. Search Product  
-9. Verify Subscription in home page  
-10. Verify Subscription in Cart page  
-11. Add Products in Cart  
-12. Verify Product quantity in Cart  
-13. Place Order: Register while Checkout  
-14. Place Order: Register before Checkout  
-15. Remove Products From Cart  
-16. View Category Products  
-17. View & Cart Brand Products  
-18. Search Products and Verify Cart After Login  
-19. Add review on product  
-20. Add to cart from Recommended items  
-21. Download Invoice after purchase order  
-22. Verify Scroll Up using 'Arrow' button and Scroll Down functionality  
-23. Verify Scroll Up without 'Arrow' button and Scroll Down functionality  
+- Register User
+- Login User with correct email and password
+- Login User with incorrect email and password
+- Logout User
+- Register User with existing email
+- Contact Us Form
+- Verify All Products and product detail page
+- Search Product
+- Verify Subscription in home page
+- Verify Subscription in Cart page
+- Add Products in Cart
+- Verify Product quantity in Cart
+- Place Order: Register while Checkout
+- Place Order: Register before Checkout
+- Remove Products From Cart
+- View Category Products
+- View & Cart Brand Products
+- Search Products and Verify Cart After Login
+- Add review on product
+- Add to cart from Recommended items
+- Download Invoice after purchase order
+- Verify Scroll Up using 'Arrow' button and Scroll Down functionality
+- Verify Scroll Up without 'Arrow' button and Scroll Down functionality
+
+
 
 ## Tools & Technologies
 - **Cypress**: End-to-end testing framework
